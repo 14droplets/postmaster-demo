@@ -1,5 +1,6 @@
 from flask import Blueprint
 from flask import render_template, redirect, url_for
+from flask import current_app
 
 from postmaker.webapp.forms import PostForm
 
@@ -15,6 +16,7 @@ def index():
 def posts():
     form = PostForm()
     if form.validate_on_submit():
+        current_app.logger.info("Получил форму!")
         redirect(url_for("main.posts"))
 
     return render_template("posts.html", new_post_form=form)
