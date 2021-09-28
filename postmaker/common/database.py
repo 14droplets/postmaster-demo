@@ -16,6 +16,9 @@ class Post(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     """ Первичное поле таблицы - уникальный номер записи """
 
+    title = Column(String, nullable=False)
+    """ Заголовок для видео на Ютуб """
+
     description = Column(String, nullable=False)
     """ Описание поста. Собственно текст как он есть """
 

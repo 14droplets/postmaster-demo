@@ -6,7 +6,7 @@ TESTING: True
 
 # Путь до базы данных, используемой приложением
 # На винде нужно изобразить существующий путь
-SQLALCHEMY_DATABASE_URI: "sqlite:////tmp/postmaker.db"
+SQLALCHEMY_DATABASE_URI: 'sqlite:///D:\\Work\\Python\\postmaster-demo-master\\postmaker\\adminpostmaker.db'
 
 # Не разобрался что эта штука делает, но flask-sqlalchemy рекомендут это отключить
 SQLALCHEMY_TRACK_MODIFICATIONS: false
