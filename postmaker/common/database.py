@@ -19,13 +19,13 @@ class Post(Base):
     title = Column(String, nullable=False)
     """ Заголовок для видео на Ютуб """
 
-    description = Column(String, nullable=False)
-    """ Описание поста. Собственно текст как он есть """
-
     tags = Column(String, nullable=True)
     """ Тэги поста, сделаем их в виде строки через запятую. 
         Вообще-то это нарушение первой нормальной формы БД и это плохо, 
         но для простого примера, сделаем так """
+
+    description = Column(String, nullable=False)
+    """ Описание поста. Собственно текст как он есть """
 
     publication_date = Column(DateTime, nullable=False)
     """ Дата публикации """

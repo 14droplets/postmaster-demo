@@ -1,20 +1,18 @@
+from logging import getLogger
 from logging.config import dictConfig as logging_dict_config
 
 from postmaker.common.config import load_config
-from postmaker.webapp import app_factory
+from postmaker.webapp.app_factory import create_app
 
+_log = getLogger(__name__)
 
 # грузим конфиг
-config_path = "postmaker_config.yaml"
-config = load_config(config_path)
+config = load_config()
 
 # Настроим логи, чтобы видеть не только WARNING и ERROR сообщения
 logging_dict_config(config["LOG_CONFIG"])
 
 # Создаем объект приложения
-app = app_factory(config)
+app = create_app(config)
 
-# Напишем в лог откуда мы взяли конфиг
-# Возпольуемся логгером приложения
-app.logger.info("Я взял конфиг из '%s", config_path)
 

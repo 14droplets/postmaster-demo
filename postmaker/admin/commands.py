@@ -34,8 +34,7 @@ def admin_main(argv):
     # Регистрируем аргумент - путь до конфиг файла
     parser.add_argument(
         "--config",
-        metavar="путь до конфига", dest="config", nargs="?", type=str,
-        default="postmaker_config.yaml"
+        metavar="путь до конфига", dest="config", nargs="?", type=str
     )
 
     # Регистриуем команды
